@@ -10,6 +10,7 @@ public class CoinPickup : MonoBehaviour
 
     void Update()
     {
+        
         // Press E to pickup or drop
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -46,15 +47,14 @@ public class CoinPickup : MonoBehaviour
             if (distance <= pickupRange)
             {
                 heldItem = coin;
-
-                // Disable collider while holding
-                Collider col =
-                    heldItem.GetComponent<Collider>();
+                Collider col = heldItem.GetComponent<Collider>();
 
                 if (col != null)
                 {
                     col.enabled = false;
                 }
+
+
 
                 // Disable physics while holding
                 Rigidbody rb =
@@ -82,13 +82,13 @@ public class CoinPickup : MonoBehaviour
         heldItem.transform.parent = null;
 
         // Enable collider again
-        Collider col =
-            heldItem.GetComponent<Collider>();
+        Collider col =heldItem.GetComponent<Collider>();
 
         if (col != null)
         {
             col.enabled = true;
         }
+
 
         // Enable physics again
         Rigidbody rb =
