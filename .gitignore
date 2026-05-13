@@ -20,6 +20,8 @@ Recordings/
 *.booproj
 *.svd
 *.pdb
+.vs/
+.vscode/
 
 .DS_Store
 Thumbs.db
