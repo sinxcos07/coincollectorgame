@@ -10,9 +10,13 @@ public class CoinPickup : MonoBehaviour
 
     void Update()
     {
-        
+
         // Press E to pickup or drop
-        if (Input.GetKeyDown(KeyCode.E))
+        if (
+              Input.GetKeyDown(KeyCode.E)
+              ||
+              Input.GetMouseButtonDown(0)
+        )
         {
             if (heldItem == null)
             {
