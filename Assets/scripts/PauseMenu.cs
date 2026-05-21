@@ -9,6 +9,9 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject controlsPanel;
 
+    [Header("UI")]
+    public GameObject crosshair;
+
     [Header("Volume")]
     public Slider volumeSlider;
 
@@ -26,7 +29,9 @@ public class PauseMenu : MonoBehaviour
 
         controlsPanel.SetActive(false);
 
-        // Slider volume listener
+        // Slider listener
+        volumeSlider.onValueChanged.RemoveAllListeners();
+
         volumeSlider.onValueChanged.AddListener(
             ChangeVolume
         );
@@ -36,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // If controls panel open
+            // If controls panel is open
             if (controlsPanel.activeSelf)
             {
                 CloseControls();
@@ -62,6 +67,12 @@ public class PauseMenu : MonoBehaviour
 
         pausePanel.SetActive(true);
 
+        // Hide crosshair
+        if (crosshair != null)
+        {
+            crosshair.SetActive(false);
+        }
+
         Time.timeScale = 0f;
 
         Cursor.lockState =
@@ -82,6 +93,12 @@ public class PauseMenu : MonoBehaviour
 
         controlsPanel.SetActive(false);
 
+        // Show crosshair again
+        if (crosshair != null)
+        {
+            crosshair.SetActive(true);
+        }
+
         Time.timeScale = 1f;
 
         Cursor.lockState =
@@ -96,6 +113,12 @@ public class PauseMenu : MonoBehaviour
 
     public void OpenControls()
     {
+        // Keep crosshair hidden
+        if (crosshair != null)
+        {
+            crosshair.SetActive(false);
+        }
+
         pausePanel.SetActive(false);
 
         controlsPanel.SetActive(true);
@@ -106,6 +129,12 @@ public class PauseMenu : MonoBehaviour
         controlsPanel.SetActive(false);
 
         pausePanel.SetActive(true);
+
+        // Keep crosshair hidden
+        if (crosshair != null)
+        {
+            crosshair.SetActive(false);
+        }
     }
 
     public void MainMenu()
