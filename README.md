@@ -75,4 +75,4 @@ Navigate through the game world, collect objects, complete objectives, and progr
 
 ## 👨‍💻 Author
 
-Made by Sinxcos07
+Made by Suryansh Sinha - Sinxcos07
