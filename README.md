@@ -67,7 +67,6 @@ Navigate through the game world, collect objects, complete objectives, and progr
 
 ## 🔮 Future Improvements
 
-- Add enemy AI
 - More levels
 - Sound effects
 - Better UI
