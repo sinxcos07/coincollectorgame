@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lvl2.unity
     guid: 14585d1e88fd31d4d8ce5d8c36c920be
+  - enabled: 1
+    path: Assets/Credits.unity
+    guid: 6435fd6775cad2e4ca26e50633a6b8e5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
